@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a href="index.html">Go to main page</a>
+    <header>
+        <h1>Admin Login</h1>
+        <nav>
+            <ul>
+                <li>
+                    <select id="language-select">
+                        <option value="es">Español <img src="es.png" alt="Español"></option>
+                        <option value="en">English <img src="en.png" alt="English"></option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="login">
+            <form id="login-form">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Random Projects</p>
+    </footer>
+    <script src="language-switcher.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
