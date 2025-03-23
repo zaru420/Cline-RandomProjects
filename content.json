@@ -1,0 +1,37 @@
+{
+  "products": [
+    {
+      "name": "Product 1",
+      "image": "https://via.placeholder.com/150",
+      "description": "Description of Product 1.",
+      "price": "$19.99"
+    },
+    {
+      "name": "Product 2",
+      "image": "https://via.placeholder.com/150",
+      "description": "Description of Product 2.",
+      "price": "$29.99"
+    },
+    {
+      "name": "Product 3",
+      "image": "https://via.placeholder.com/150",
+      "description": "Description of Product 3.",
+      "price": "$39.99"
+    }
+  ],
+  "sidebars": [
+    {
+      "name": "Product 4",
+      "image": "https://via.placeholder.com/150",
+      "description": "Description of Product 4.",
+      "price": "$49.99"
+    },
+    {
+      "name": "Product 5",
+      "image": "https://via.placeholder.com/150",
+      "description": "Description of Product 5.",
+      "price": "$59.99"
+    }
+  ],
+  "footer": "&copy; 2025 Random Projects"
+}

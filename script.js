@@ -28,13 +28,53 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('remember-me').checked;
 
             if (username === 'admin' && password === 'password') {
-                window.location.href = 'admin-panel.html';
+                if (rememberMe) {
+                    // Set a cookie to remember the user
+                    document.cookie = "username=admin; role=admin; expires=" + new Date(new Date().getTime() + 365 * 24 * 60 * 60 * 1000).toUTCString() + "; path=/"; // Expires in 1 year
+                } else {
+                    // Delete the cookie if it exists
+                    document.cookie = "username=; role=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                }
+                window.location.href = 'index.html';
             } else {
                 alert('Invalid credentials');
             }
         });
+    }
+
+    // Check for existing session on page load
+    function checkSession() {
+        const username = getCookie("username");
+        const role = getCookie("role");
+        if (username && role === "admin") {
+            showEditIcons();
+            window.location.href = 'index.html';
+        }
+    }
+
+    function showEditIcons() {
+        const editIcons = document.querySelectorAll(".edit-icon");
+        editIcons.forEach(icon => {
+            icon.style.display = "inline-block";
+            icon.addEventListener("click", function(event) {
+                event.preventDefault();
+                const product = this.closest(".product");
+                const productId = product.dataset.productId;
+                window.location.href = `edit-product.html?id=${productId}`;
+            });
+        });
+    }
+
+    checkSession();
+
+    // Helper function to get a cookie value
+    function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(';').shift();
     }
 
     function translatePage(language) {
